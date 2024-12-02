@@ -1,40 +1,54 @@
+
 <div class="container">
-  <div class="row">
-    <div class="col-md-3">Title:</div>
-    <div class="col-md-9"><input type="text" class="form-control" id="title" placeholder="Enter title"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Description:</div>
-    <div class="col-md-9"><textarea class="form-control" id="description" placeholder="Enter description"></textarea></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Category:</div>
-    <div class="col-md-9"><select class="form-control" id="category">
-      <option value="">Select category</option>
-      <!-- add options here -->
-    </select></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Level:</div>
-    <div class="col-md-9"><select class="form-control" id="level">
-      <option value="">Select level</option>
-      <!-- add options here -->
-    </select></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Prerequisite:</div>
-    <div class="col-md-9"><input type="text" class="form-control" id="prerequisite" placeholder="Enter prerequisite (comma separated)"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Tags:</div>
-    <div class="col-md-9">
-      <input type="text" class="form-control" id="tags" placeholder="Enter tags (comma separated)">
-      <button class="btn btn-primary" id="add-tag-btn">Add</button>
-      <ul id="tag-list"></ul>
+  <form>
+    <!-- Title -->
+    <div class="form-group">
+      <label for="titleField">Title</label>
+      <input type="text" class="form-control" id="titleField" placeholder="Enter title">
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3">Copyright:</div>
-    <div class="col-md-9"><input type="text" class="form-control" id="copyright" placeholder="Enter copyright"></div>
-  </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="descriptionField">Description</label>
+      <textarea class="form-control" id="descriptionField" rows="3" placeholder="Enter description"></textarea>
+    </div>
+
+    <!-- Category -->
+    <div class="form-group">
+      <label for="categoryField">Category</label>
+      <input type="text" class="form-control" id="categoryField" placeholder="Enter category">
+    </div>
+
+    <!-- Level -->
+    <div class="form-group">
+      <label for="levelField" ngbTooltip="Enter value between 1 (basic) and 10 (advanced)" placement="top">Level</label>
+      <input type="number" class="form-control" id="levelField" placeholder="Enter level" min="1" max="10">
+    </div>
+
+    <!-- Prerequisite -->
+    <div class="form-group">
+      <label for="prerequisiteField">Prerequisite</label>
+      <input type="text" class="form-control" id="prerequisiteField" placeholder="Enter prerequisite">
+    </div>
+
+    <!-- Tags -->
+    <div class="form-group">
+      <label for="tagsField" ngbTooltip="Enter tags, separated by commas" placement="top">Tags</label>
+      <input type="text" class="form-control" id="tagsField" placeholder="Enter tags">
+    </div>
+
+    <!-- Copyright -->
+    <div class="form-group">
+      <label for="copyrightField">Copyright</label>
+      <input type="text" class="form-control" id="copyrightField" placeholder="Enter copyright">
+    </div>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Export</button>
+  </form>
+    <button type="button" class="btn btn-primary" (click)="onClickSubmit()">Submit</button>
+
+    <button class="btn btn-primary" routerLink="/lesson-detail/1234">Detail for lesson 1234</button>
+  
+
 </div>
+

@@ -1,0 +1,25 @@
+<h1>Test Page 1</h1>
+
+<p>numberValue: {{ numberValue }}</p>
+
+<div class="row">
+    <input class="col-2" type="text" [value]="numberValue" disabled="true">
+</div>
+<div class="row">
+    <input class="col-2" type="text" [value]="numberValue" (input)="onInputChanged($event)">
+</div>
+<div class="row">
+    <input class="col-2" type="number" [(ngModel)]="numberValue" >
+</div>
+
+<div class="row">
+        <button type="button" class="col-2 btn btn-outline-primary"
+        (click)="onClickIncrementValue()">Increment</button>
+</div>
+
+<app-number-display [value]="numberValue"></app-number-display>
+
+<app-number-steps class="col-3"
+  (decr10)="onDecr10($event)" (decr1)="onDecr1($event)"
+  (incr1)="onIncr1($event)" (incr10)="onIncr10($event)"
+></app-number-steps>
